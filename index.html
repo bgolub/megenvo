@@ -127,62 +127,6 @@
 
     .bio-text:last-child { margin-bottom: 0; }
 
-    /* ── Tables ── */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.97rem;
-    }
-
-    thead tr {
-      border-bottom: 1px solid var(--rule);
-    }
-
-    thead th {
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-align: left;
-      padding: 0 1rem 0.65rem 0;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid var(--rule);
-    }
-
-    tbody tr:last-child { border-bottom: none; }
-
-    tbody td {
-      padding: 0.75rem 1rem 0.75rem 0;
-      vertical-align: top;
-      line-height: 1.5;
-    }
-
-    tbody td:first-child { font-style: italic; }
-    tbody td:nth-child(2) { font-weight: 400; }
-
-    @media (max-width: 560px) {
-      thead { display: none; }
-      tbody tr { display: block; padding: 0.8rem 0; }
-      tbody td { display: block; padding: 0.1rem 0; }
-      tbody td:before {
-        font-family: 'Jost', sans-serif;
-        font-size: 0.65rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--muted);
-        display: block;
-      }
-      tbody td:nth-child(1):before { content: "Production"; }
-      tbody td:nth-child(2):before { content: "Role"; }
-      tbody td:nth-child(3):before { content: "Company"; }
-      tbody td:nth-child(4):before { content: "Conductor"; }
-      tbody td:nth-child(5):before { content: "Director"; }
-    }
-
     /* ── Concert entries ── */
     .concert-entry {
       margin-bottom: 1.2rem;
@@ -322,40 +266,25 @@
 
       <section id="opera">
         <h2>Opera &amp; Operetta</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Production</th>
-              <th>Role</th>
-              <th>Company</th>
-              <th>Conductor</th>
-              <th>Director</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>The Red Mill</td>
-              <td>Tina</td>
-              <td>Lyric Theatre San Jose</td>
-              <td>Michael Taylor</td>
-              <td>Michael Taylor</td>
-            </tr>
-            <tr>
-              <td>Ruddygore</td>
-              <td>Ensemble</td>
-              <td>Lamplighters</td>
-              <td>Baker Peeples</td>
-              <td>David Euresti</td>
-            </tr>
-            <tr>
-              <td>Madama Butterfly</td>
-              <td>Cousin</td>
-              <td>West Bay Opera</td>
-              <td>José Luis Moscovich</td>
-              <td>Richard Harrell</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div class="concert-entry">
+          <div class="concert-title">The Red Mill</div>
+          <div class="concert-meta">Lyric Theatre San Jose &nbsp;·&nbsp; Conductor Michael Taylor &nbsp;·&nbsp; Director Michael Taylor</div>
+          <div class="concert-role">Tina</div>
+        </div>
+
+        <div class="concert-entry">
+          <div class="concert-title">Ruddygore</div>
+          <div class="concert-meta">Lamplighters &nbsp;·&nbsp; Conductor Baker Peeples &nbsp;·&nbsp; Director David Euresti</div>
+          <div class="concert-role">Ensemble</div>
+        </div>
+
+        <div class="concert-entry">
+          <div class="concert-title">Madama Butterfly</div>
+          <div class="concert-meta">West Bay Opera &nbsp;·&nbsp; Conductor José Luis Moscovich &nbsp;·&nbsp; Director Richard Harrell</div>
+          <div class="concert-role">Cousin</div>
+        </div>
+
       </section>
 
       <section id="concerts">
