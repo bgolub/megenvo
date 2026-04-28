@@ -40,7 +40,23 @@
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--rule);
       margin-bottom: 3.5rem;
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
     }
+
+    .header-photo {
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .header-photo img {
+      width: 100%;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .header-text { flex: 1; }
 
     header h1 {
       font-size: clamp(2.4rem, 6vw, 3.8rem);
@@ -79,6 +95,11 @@
     }
 
     header .contact span { margin: 0 0.6rem; opacity: 0.4; }
+
+    @media (max-width: 520px) {
+      header { flex-direction: column; gap: 1.8rem; }
+      .header-photo { width: 120px; }
+    }
 
     /* ── Sections ── */
     section { margin-bottom: 3.5rem; }
@@ -267,13 +288,18 @@
   <div class="page">
 
     <header>
-      <h1>Megen Vo</h1>
-      <p class="voice-type">Soprano &nbsp;·&nbsp; F3 – D6</p>
-      <p class="contact">
-        <a href="tel:5182218601">(518) 221-8601</a>
-        <span>·</span>
-        <a href="mailto:Megen.vo@gmail.com">Megen.vo@gmail.com</a>
-      </p>
+      <div class="header-photo">
+        <img src="headshot.jpg" alt="Megen Vo, Soprano">
+      </div>
+      <div class="header-text">
+        <h1>Megen Vo</h1>
+        <p class="voice-type">Soprano &nbsp;·&nbsp; F3 – D6</p>
+        <p class="contact">
+          <a href="tel:5182218601">(518) 221-8601</a>
+          <span>·</span>
+          <a href="mailto:Megen.vo@gmail.com">Megen.vo@gmail.com</a>
+        </p>
+      </div>
     </header>
 
     <main>
