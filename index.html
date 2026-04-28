@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Megen Vo, Soprano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf8f4;
+      --ink: #1a1814;
+      --muted: #6b6560;
+      --rule: #d8d2c8;
+      --accent: #8b6f5e;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3.5rem;
+    }
+
+    header h1 {
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+    }
+
+    header .voice-type {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin-top: 0.5rem;
+    }
+
+    header .contact {
+      margin-top: 1.4rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    header .contact a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    header .contact a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    header .contact span { margin: 0 0.6rem; opacity: 0.4; }
+
+    /* ── Sections ── */
+    section { margin-bottom: 3.5rem; }
+
+    section h2 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.97rem;
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    thead th {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 0 1rem 0.65rem 0;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody td {
+      padding: 0.75rem 1rem 0.75rem 0;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    tbody td:first-child { font-style: italic; }
+    tbody td:nth-child(2) { font-weight: 400; }
+
+    @media (max-width: 560px) {
+      thead { display: none; }
+      tbody tr { display: block; padding: 0.8rem 0; }
+      tbody td { display: block; padding: 0.1rem 0; }
+      tbody td:before {
+        font-family: 'Jost', sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        display: block;
+      }
+      tbody td:nth-child(1):before { content: "Production"; }
+      tbody td:nth-child(2):before { content: "Role"; }
+      tbody td:nth-child(3):before { content: "Company"; }
+      tbody td:nth-child(4):before { content: "Conductor"; }
+      tbody td:nth-child(5):before { content: "Director"; }
+    }
+
+    /* ── Concert entries ── */
+    .concert-entry {
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .concert-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .concert-title {
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .concert-meta {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 0.15rem;
+    }
+
+    .concert-role {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+
+    /* ── Awards ── */
+    .award-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.97rem;
+    }
+
+    .award-entry:last-child { border-bottom: none; }
+
+    .award-name { flex: 1; font-style: italic; }
+
+    .award-date {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .award-place {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      min-width: 4.5rem;
+      text-align: right;
+    }
+
+    @media (max-width: 480px) {
+      .award-entry { flex-wrap: wrap; gap: 0.3rem; }
+      .award-date { order: 3; width: 100%; }
+    }
+
+    /* ── Training ── */
+    .training-block { margin-bottom: 1.1rem; }
+    .training-block:last-child { margin-bottom: 0; }
+
+    .training-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .training-value { font-size: 0.97rem; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      margin-top: 2rem;
+      padding: 2.5rem 0 4rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>Megen Vo</h1>
+      <p class="voice-type">Soprano &nbsp;·&nbsp; F3 – D6</p>
+      <p class="contact">
+        <a href="tel:5182218601">(518) 221-8601</a>
+        <span>·</span>
+        <a href="mailto:Megen.vo@gmail.com">Megen.vo@gmail.com</a>
+      </p>
+    </header>
+
+    <main>
+
+      <section id="opera">
+        <h2>Opera &amp; Operetta</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Production</th>
+              <th>Role</th>
+              <th>Company</th>
+              <th>Conductor</th>
+              <th>Director</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Red Mill</td>
+              <td>Tina</td>
+              <td>Lyric Theatre San Jose</td>
+              <td>Michael Taylor</td>
+              <td>Michael Taylor</td>
+            </tr>
+            <tr>
+              <td>Ruddygore</td>
+              <td>Ensemble</td>
+              <td>Lamplighters</td>
+              <td>Baker Peeples</td>
+              <td>David Euresti</td>
+            </tr>
+            <tr>
+              <td>Madama Butterfly</td>
+              <td>Cousin</td>
+              <td>West Bay Opera</td>
+              <td>José Luis Moscovich</td>
+              <td>Richard Harrell</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="concerts">
+        <h2>Concert Experience</h2>
+
+        <div class="concert-entry">
+          <div class="concert-title">Broadway by the Decade</div>
+          <div class="concert-meta">South Bay Musical Theatre &nbsp;·&nbsp; Music Director Brad Handshy</div>
+          <div class="concert-role">Soloist &nbsp;·&nbsp; February 2025</div>
+        </div>
+
+        <div class="concert-entry">
+          <div class="concert-title">Cole Porter Celebration Concert</div>
+          <div class="concert-meta">Lyric Theatre San Jose &nbsp;·&nbsp; Conductor Michael Taylor</div>
+          <div class="concert-role">Soloist &nbsp;·&nbsp; July – August 2024</div>
+        </div>
+
+      </section>
+
+      <section id="awards">
+        <h2>Awards &amp; Competitions</h2>
+
+        <div class="award-entry">
+          <span class="award-name">First Place, Advanced Category — Cal-Western NATS Musical Theater Student Auditions</span>
+          <span class="award-place">1st Place</span>
+          <span class="award-date">January 2024</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">First Place, Advanced Category — Cal-Western NATS Classical Student Auditions</span>
+          <span class="award-place">1st Place</span>
+          <span class="award-date">January 2024</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">First Place, Musical Theater — Arizona International Music Competition</span>
+          <span class="award-place">1st Place</span>
+          <span class="award-date">December 2023</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Second Place, Classical — Arizona International Music Competition</span>
+          <span class="award-place">2nd Place</span>
+          <span class="award-date">December 2023</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Second Place, Advanced Category — SF Bay Area NATS Musical Theater Student Auditions</span>
+          <span class="award-place">2nd Place</span>
+          <span class="award-date">November 2023</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Second Place, Advanced Category — SF Bay Area NATS Classical Student Auditions</span>
+          <span class="award-place">2nd Place</span>
+          <span class="award-date">March 2023</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Honorable Mention, Advanced Category — SF Bay Area NATS Musical Theater Student Auditions</span>
+          <span class="award-place">Hon. Mention</span>
+          <span class="award-date">November 2022</span>
+        </div>
+
+      </section>
+
+      <section id="training">
+        <h2>Training &amp; Education</h2>
+
+        <div class="training-block">
+          <div class="training-label">Education</div>
+          <div class="training-value">Case Western Reserve University — B.A. in Voice &amp; Psychology</div>
+        </div>
+
+        <div class="training-block">
+          <div class="training-label">Medical Degree</div>
+          <div class="training-value">University of Rochester School of Medicine — Doctor of Medicine</div>
+        </div>
+
+        <div class="training-block">
+          <div class="training-label">Voice Teachers &amp; Coaches</div>
+          <div class="training-value">Erin McOmber, Julia Nielsen, Amy Heumann (current) &nbsp;·&nbsp; Ron Valentino, Benjamin Liupaogo, Russell Norman</div>
+        </div>
+
+        <div class="training-block">
+          <div class="training-label">Additional Skills</div>
+          <div class="training-value">Fluent in Spanish &nbsp;·&nbsp; Proficient violin &nbsp;·&nbsp; Basic piano &nbsp;·&nbsp; Practicing Pediatrician</div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <a href="mailto:Megen.vo@gmail.com">Megen.vo@gmail.com</a>
+    </footer>
+
+  </div>
+</body>
+</html>
