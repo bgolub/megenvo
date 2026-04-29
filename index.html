@@ -100,8 +100,11 @@
     header .contact span { margin: 0 0.6rem; opacity: 0.4; }
 
     @media (max-width: 520px) {
-      header { flex-direction: column; gap: 1.8rem; }
-      .header-photo { width: 120px; }
+      header { gap: 1.5rem; }
+      .header-photo { width: 115px; }
+      header h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
+      header .voice-type { font-size: 0.9rem; }
+      header .contact { font-size: 0.8rem; margin-top: 1rem; }
     }
 
     /* ── Sections ── */
