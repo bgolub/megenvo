@@ -217,8 +217,18 @@
     }
 
     @media (max-width: 480px) {
-      .award-entry { flex-wrap: wrap; gap: 0.3rem; }
-      .award-date { order: 3; width: 100%; }
+      .award-entry {
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: flex-start;
+      }
+      .award-place {
+        width: auto;
+      }
+      .award-date {
+        width: auto;
+        text-align: left;
+      }
     }
 
     /* ── Training ── */
