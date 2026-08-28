@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Megen Vo, Soprano</title>
-  <meta name="description" content="Megen Vo is a Bay Area soprano performing with Opera San Jose and other leading companies. Multiple NATS prize-winner. Available for engagements — mvosoprano@gmail.com">
+  <meta name="description" content="Megen Vo is a Bay Area soprano performing with the San Francisco Symphony Chorus, Opera San Jose, and other leading companies. Multiple NATS prize-winner. Available for engagements — mvosoprano@gmail.com">
   <meta name="format-detection" content="telephone=no,address=no,email=no">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,6 +179,18 @@
       margin-top: 0.1rem;
     }
 
+    .bio-text a, .concert-entry a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .bio-text a:hover, .concert-entry a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
     /* ── Awards ── */
     .award-entry {
       display: flex;
@@ -294,7 +306,7 @@
 
       <section id="bio">
         <h2>About</h2>
-        <p class="bio-text">Megen Vo is a Bay Area soprano with a voice spanning operatic repertoire, operetta, and musical theater. She has performed with Opera San Jose, West Bay Opera, the Lamplighters Music Theatre, Lyric Theatre San Jose, and South Bay Musical Theatre, appearing in roles ranging from Puccini to Gilbert &amp; Sullivan to Cole Porter.</p>
+        <p class="bio-text">Megen Vo is a Bay Area soprano with a voice spanning operatic repertoire, operetta, and musical theater. She is a member of and has performed with the San Francisco Symphony Chorus, Opera San Jose, West Bay Opera, the Lamplighters Music Theatre, Lyric Theatre San Jose, and South Bay Musical Theatre, appearing in roles ranging from Puccini to Gilbert &amp; Sullivan to Cole Porter.</p>
         <p class="bio-text">A prize-winner at the Cal-Western and SF Bay Area NATS auditions and the Arizona International Music Competition, Megen has earned top honors in both classical and musical theater categories. She brings to the stage not only technical range but a musicianship shaped by years of study with teachers including Julia Nielsen and Marcie Stapp.</p>
         <p class="bio-text">Off the stage, Megen is a practicing Pediatrician and holds a Doctor of Medicine from the University of Rochester School of Medicine and a B.A. in voice and psychology from Case Western Reserve University.</p>
       </section>
@@ -303,9 +315,9 @@
         <h2>Opera &amp; Operetta</h2>
 
         <div class="concert-entry">
-          <div class="concert-title">Iolanthe<span class="upcoming">Upcoming</span></div>
+          <div class="concert-title">Iolanthe</div>
           <div class="concert-meta">Lamplighters &nbsp;·&nbsp; Conductor Jennifer Ashworth &nbsp;·&nbsp; Director Ted Zoldan &nbsp;·&nbsp; 2026</div>
-          <div class="concert-role">Phyllis (cover), Fairy</div>
+          <div class="concert-role">Phyllis (cover), Sacharissa</div>
         </div>
 
         <div class="concert-entry">
@@ -347,7 +359,13 @@
       </section>
 
       <section id="concerts">
-        <h2>Concert Experience</h2>
+        <h2>Concert &amp; Choral Experience</h2>
+
+        <div class="concert-entry">
+          <div class="concert-title"><a href="https://www.sfsymphony.org/About-SFS/SFS-Chorus" target="_blank" rel="noopener">San Francisco Symphony Chorus</a></div>
+          <div class="concert-meta">San Francisco Symphony &nbsp;·&nbsp; Chorus Director Jenny Wong</div>
+          <div class="concert-role">Soprano</div>
+        </div>
 
         <div class="concert-entry">
           <div class="concert-title">Broadway by the Decade</div>
